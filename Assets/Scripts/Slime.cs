@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Worm : Entity
+public class Slime : Entity
 {
-    // [SerializeField] private int lives = 3;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        lives = 1;
+        lives = 3;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -16,11 +21,6 @@ public class Worm : Entity
         if (collision.gameObject == Hero.Instance.gameObject)
         {
             Hero.Instance.GetDamage();
-            lives--;
-            Debug.Log("worm's lives " + lives);
         }
-
-        if (lives < 1)
-            Die();
     }
 }
