@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
     private Vector3 position;
-    private float cameraPositionZ = -10f;
+    private float cameraPositionZ = -1f;
     private void Awake()
     {
         if (!player)

@@ -5,16 +5,24 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     protected int lives;
+    protected bool isDie;
 
     public virtual void GetDamage()
     {
         lives--;
         if (lives < 1)
         {
+            isDie = true;
             Die();
         }
     }
 
+    public virtual bool GetIsDie()
+    {
+        return isDie;
+    }
+
+    // POLYMORPHISM
     public virtual void Die()
     {
         Destroy(this.gameObject);

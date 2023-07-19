@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingMonster : Entity
+public class WalkingMonster : MonoBehaviour
 {
+    /*
     private float speed = 1.5f;
     private Vector3 direction;
     private SpriteRenderer sprite;
 
+    
     private void Awake()
     {
         sprite = GetComponentInChildren<SpriteRenderer>();
@@ -16,7 +18,7 @@ public class WalkingMonster : Entity
     private void Start()
     {
         direction = transform.right;
-        lives = 5;
+       
     }
 
     private void Move()
@@ -42,4 +44,6 @@ public class WalkingMonster : Entity
             Hero.Instance.GetDamage();
         }
     }
+
+    */
 }

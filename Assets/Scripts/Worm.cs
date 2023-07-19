@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class Worm : Entity
 {
-    // [SerializeField] private int lives = 3;
+    private Animator anim;
+    private Collider2D col;
 
     private void Start()
     {
-        lives = 1;
+        anim = GetComponent<Animator>();
+        col = GetComponent<Collider2D>();
+        lives = 3;
+        isDie = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == Hero.Instance.gameObject)
+        if (collision.gameObject == Hero.Instance.gameObject && lives > 0)
         {
             Hero.Instance.GetDamage();
-            lives--;
-            Debug.Log("worm's lives " + lives);
         }
+    }
 
-        if (lives < 1)
-            Die();
+    public override void Die()
+    {
+        col.isTrigger = true;
+        anim.SetTrigger("death");
+        gameObject.tag = "Enemy_dead";
+        LevelController.Instance.EnemiesCount();
     }
 }

@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Slime : Entity
+public class Slime : Entity // INHERITANCE
 {
-    // Start is called before the first frame update
     void Start()
     {
         lives = 3;
+        isDie = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,5 +17,13 @@ public class Slime : Entity
         {
             Hero.Instance.GetDamage();
         }
+    }
+
+    // POLYMORPHISM
+    public override void Die() 
+    {
+        Destroy(this.gameObject);
+        gameObject.tag = "Enemy_dead";
+        LevelController.Instance.EnemiesCount();
     }
 }
