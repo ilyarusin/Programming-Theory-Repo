@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3651998918514273558}
   - component: {fileID: 3651998918514273560}
   - component: {fileID: 3651998918514273562}
-  - component: {fileID: 3651998918514273561}
   - component: {fileID: 3651998918514273563}
   m_Layer: 0
   m_Name: GreenEnemy
@@ -130,21 +129,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3651998918514273561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3651998918514273556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f7e6f0ece419db43b7b609f3aba902b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  pointA: {fileID: 0}
-  pointB: {fileID: 0}
 --- !u!61 &3651998918514273563
 BoxCollider2D:
   m_ObjectHideFlags: 0

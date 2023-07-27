@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Pause : MonoBehaviour
 {
     [SerializeField] GameObject pausePanel;
+    public static bool gameIsPaused = false;
 
     private void Awake()
     {
@@ -15,12 +16,14 @@ public class Pause : MonoBehaviour
 
     public void SetPause()
     {
+        gameIsPaused = true;
         pausePanel.SetActive(true);
         Time.timeScale = 0;
     }
 
     public void PauseOff()
     {
+        gameIsPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1;
     }

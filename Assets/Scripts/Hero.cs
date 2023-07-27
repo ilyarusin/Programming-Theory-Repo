@@ -35,6 +35,7 @@ public class Hero : Entity
     public float attackRange;
     public LayerMask enemy;
     public Joystick joystick;
+    bool isDead = false;
 
     public static Hero Instance { get; set; }
 
@@ -65,22 +66,21 @@ public class Hero : Entity
     {
         if (isGround && !isAttacking && health >= 0) State = States.idle;
 
-        if (!isAttacking && joystick.Horizontal != 0 && health >= 0)
+        if (!isAttacking && (joystick.Horizontal != 0 || Input.GetButton("Horizontal")) && health >= 0)
         {
             Run();
         }
 
-        if (!isAttacking && isGround && joystick.Vertical > 0.5f)
+        if (!isAttacking && isGround && (joystick.Vertical > 0.5f || Input.GetButtonDown("Jump")))
         {
             Jump();
         }
 
-        /*
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && !isDead)
         {
             Attack();
         }
-        */
+        
 
         if (transform.position.y < -18)
         {
@@ -107,10 +107,11 @@ public class Hero : Entity
     {
         if (isGround) State = States.run;
 
-        Vector3 direction = transform.right * joystick.Horizontal;
+        // Vector3 direction = transform.right * joystick.Horizontal;
+        Vector3 direction = transform.right * Input.GetAxis("Horizontal");
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, speed * Time.deltaTime);
         playerSprite.flipX = direction.x < leftBoundary;
-        
+
     }
 
     void Jump()
@@ -149,8 +150,6 @@ public class Hero : Entity
                 StartCoroutine(EnemyOnAttack(colliders[i]));
         }
     }
-
-    
 
     IEnumerator AttackAnimation()
     {
@@ -199,10 +198,11 @@ public class Hero : Entity
         }
     }
 
-    
+
     public override void Die()
     {
         State = States.death;
+        isDead = true;
         LevelController.Instance.EnemiesCount();
         Invoke("SetLosePanel", 1.1f);
     }
@@ -210,9 +210,9 @@ public class Hero : Entity
     void SetLosePanel()
     {
         losePanel.SetActive(true);
-        Time.timeScale = 0; 
+        Time.timeScale = 0;
     }
-    
+
     void SetWinPanel()
     {
         winPanel.SetActive(true);

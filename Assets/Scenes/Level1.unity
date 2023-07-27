@@ -65316,16 +65316,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0a8c5d1a531832d44873bcdbf5a1bf81, type: 2}
-    - target: {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    - target: {fileID: 0}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 1805970809}
-    - target: {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    - target: {fileID: 0}
       propertyPath: pointB
       value: 
       objectReference: {fileID: 648887734}
     m_RemovedComponents:
-    - {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
 --- !u!1 &860827956
 GameObject:
@@ -67168,6 +67168,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fixed Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
 --- !u!1 &1596857927 stripped
@@ -67873,7 +67877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1776561440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -68839,16 +68843,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    - target: {fileID: 0}
       propertyPath: pointA
       value: 
       objectReference: {fileID: 1805970809}
-    - target: {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    - target: {fileID: 0}
       propertyPath: pointB
       value: 
       objectReference: {fileID: 648887734}
-    m_RemovedComponents:
-    - {fileID: 3651998918514273561, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b6ebfd34338d774d93dc4a7f6a71a05, type: 3}
 --- !u!1001 &8752698444918942092
 PrefabInstance:
