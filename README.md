@@ -9,3 +9,4 @@ Wandering Knight is a 2D platformer inspired by Metroidvania, Golden Axe, Shovel
 
 - Gameplay video: https://youtu.be/gmGy3YIcy-8
 - Android build: https://drive.google.com/file/d/1jI9_5k6yDvrjnnWGD8eUWC9h7VIXQ4-U/view?usp=sharing
+- WebGL build: https://github.com/ilyarusin/Wandering-Knight/blob/main/Wandering%20Knight.zip
